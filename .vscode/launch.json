@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "Attach to Main",
+      "port": 9229,
+      "request": "attach",
+      "localRoot": "{workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node",
+      "outputCapture": "std"
+    },
+    {
+      "name": "Attach to Renderer",
+      "port": 9223,
+      "request": "attach",
+      "type": "pwa-chrome",
+      "webRoot": "${workspaceFolder}/packages/renderer"
+    }
+  ]
+}
