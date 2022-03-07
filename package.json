@@ -16,7 +16,7 @@
     "lint": "eslint . --ext js,ts,tsx"
   },
   "browserslist": [
-    "Chrome 94"
+    "Chrome 98"
   ],
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
