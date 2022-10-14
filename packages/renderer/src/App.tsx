@@ -1,44 +1,37 @@
-import { useState } from 'react';
-import logo from '../assets/logo.svg';
-import './App.css';
+import { useState } from "react";
+import styled from "styled-components";
+
+const MainFrame = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Button = styled.button`
+  border: solid 1px white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background-color: hsl(
+    212.90322580645162,
+    42.85714285714285%,
+    42.549019607843135%
+  );
+  color: white;
+`;
 
 function App() {
   const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + Electron + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <MainFrame>
+      <h1>hello world {count}</h1>
+      <Button onClick={() => setCount((s) => s + 1)}>Increase</Button>
+    </MainFrame>
   );
 }
 
