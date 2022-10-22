@@ -29,7 +29,9 @@ function App() {
   const [count, setCount] = useState(0);
   return (
     <MainFrame>
-      <h1>hello world {count}</h1>
+      <h1>
+        {window.electron.hello()} {count}
+      </h1>
       <Button onClick={() => setCount((s) => s + 1)}>Increase</Button>
     </MainFrame>
   );

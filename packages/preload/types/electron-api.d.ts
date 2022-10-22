@@ -1,9 +1,10 @@
+import type { ElectronAPI } from "../src";
 
-interface ElectronApi {
-  readonly versions: Readonly<NodeJS.ProcessVersions>
+declare global {
+  declare interface Window {
+    electron: Readonly<ElectronAPI>;
+    electronRequire?: NodeRequire;
+  }
 }
 
-declare interface Window {
-  electron: Readonly<ElectronApi>
-  electronRequire?: NodeRequire
-}
+export {};

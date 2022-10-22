@@ -1,12 +1,18 @@
-import {contextBridge} from 'electron';
+import { contextBridge } from "electron";
 
-const apiKey = 'electron';
+export type ApiKey = "electron";
+const apiKey: ApiKey = "electron";
 /**
  * @see https://github.com/electron/electron/issues/21437#issuecomment-573522360
  */
-const api: ElectronApi = {
+const api = {
   versions: process.versions,
+  hello() {
+    return "hello world";
+  },
 };
+
+export type ElectronAPI = typeof api;
 
 /**
  * The "Main World" is the JavaScript context that your main renderer code runs in.
